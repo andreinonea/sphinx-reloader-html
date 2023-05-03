@@ -70,7 +70,7 @@ Source dir  : {sourcedir}'''
 
 	server = Server()
 	server.watch(sourcedir.as_posix(), shell('make html', cwd=makefiledir.as_posix()))
-	server.serve(root=(builddir / 'html').as_posix())
+	server.serve(root=(builddir / 'html').as_posix(), open_url_delay=None)
 	return 0
 
 
