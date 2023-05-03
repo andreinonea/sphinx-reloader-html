@@ -1,0 +1,39 @@
+[build-system]
+requires = ['setuptools']
+build-backend = 'setuptools.build_meta'
+
+[project]
+authors = [{name = 'Andrei N. Onea', email = 'andrei@onea.ro'}]
+maintainers = []
+name = 'sphinx-reloader-html'
+description = 'Sphinx live reloader for HTML output'
+readme = 'README.md'
+keywords = ['sphinx', 'live', 'reload', 'html']
+requires-python = '>=3.5'
+license.text = 'MIT License'
+classifiers = [
+	'Intended Audience :: Developers',
+	'Topic :: Software Development :: Test Tools',
+	'License :: MIT',
+	'Programming Language :: Python :: 3.5',
+]
+dependencies = [
+	'livereload',
+]
+optional-dependencies = {}
+dynamic = ['version']
+
+[project.scripts]
+sphinx-reloader = 'sphinxreloaderhtml:do_main'
+
+[project.urls]
+homepage = 'https://github.com/andreinonea/sphinx-reloader-html'
+repository = 'https://github.com/andreinonea/sphinx-reloader-html.git'
+
+[tool.setuptools.dynamic]
+version = {attr = 'sphinxreloaderhtml.__version__'}
+
+[tool.black]
+line-length = 88
+use-tabs = true
+single-quotes = true
