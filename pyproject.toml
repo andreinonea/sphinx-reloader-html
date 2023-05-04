@@ -17,11 +17,8 @@ classifiers = [
 	'License :: MIT',
 	'Programming Language :: Python :: 3.5',
 ]
-dependencies = [
-	'livereload',
-]
 optional-dependencies = {}
-dynamic = ['version']
+dynamic = ['dependencies', 'version']
 
 [project.scripts]
 sphinx-reloader = 'sphinxreloaderhtml:do_main'
@@ -31,6 +28,7 @@ homepage = 'https://github.com/andreinonea/sphinx-reloader-html'
 repository = 'https://github.com/andreinonea/sphinx-reloader-html.git'
 
 [tool.setuptools.dynamic]
+dependencies = {file = ['requirements.txt']}
 version = {attr = 'sphinxreloaderhtml.__version__'}
 
 [tool.black]
